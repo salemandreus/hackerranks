@@ -1,12 +1,8 @@
-from collections import defaultdict
+from collections import Counter
 
 
 def sockMerchant(n, ar):
-
-    socks = defaultdict(int)
-    for i in ar:
-        socks[i] += 1
-
+    socks = Counter(ar)
     pairs = sum(x // 2 for x in socks.values())
     return pairs
 
