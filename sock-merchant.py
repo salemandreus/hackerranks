@@ -2,9 +2,7 @@ from collections import Counter
 
 
 def sockMerchant(n, ar):
-    socks = Counter(ar)
-    pairs = sum(x // 2 for x in socks.values())
-    return pairs
+    return sum(x // 2 for x in Counter(ar).values())
 
 
 def test_sockMerchant_1():
@@ -14,10 +12,8 @@ def test_sockMerchant_1():
 
 
 def test_sockMerchant_2():
-
     ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
     assert sockMerchant(9, ar) == 3
-
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
