@@ -6,7 +6,6 @@ def sockMerchant(n, ar):
 
 
 def test_sockMerchant_1():
-
     ar = [1, 2, 1, 2, 1, 3, 2]
     assert sockMerchant(7, ar) == 2
 
