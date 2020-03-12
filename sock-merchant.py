@@ -1,20 +1,15 @@
 def sockMerchant(n, ar):
 
-    set_socks = set(ar)
 
-    pairs = 0
-    for j in set_socks:
-        pairs += (ar.count(j) // 2)
+    socks = {}
+    for i in ar:
+        if i not in socks:
+            socks[i] = 1
+        else:
+            socks[i] = socks[i] + 1
 
-    # return "List:" + str(ar) + "\nSet:" + str(set_socks) + "\nPairs: " + str(pairs)
+    pairs = sum(x // 2 for x in socks.values())
     return pairs
-
-# def identify_pairs():
-#
-#
-# def test_identify_pairs():
-#     ar = [1, 2, 1, 2, 1, 3, 2]
-#     assert list(identify_pairs(9, ar)) == 2
 
 
 def test_sockMerchant_1():
