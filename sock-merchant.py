@@ -1,12 +1,11 @@
+from collections import defaultdict
+
+
 def sockMerchant(n, ar):
 
-
-    socks = {}
+    socks = defaultdict(int)
     for i in ar:
-        if i not in socks:
-            socks[i] = 1
-        else:
-            socks[i] = socks[i] + 1
+        socks[i] += 1
 
     pairs = sum(x // 2 for x in socks.values())
     return pairs
