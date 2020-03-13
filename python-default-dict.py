@@ -55,3 +55,19 @@ def test_single_group():
     group_b = ['a']
 
     assert list(find_words(group_a, group_b)) == [[1, 2, 4]]
+
+
+if __name__ == '__main__':
+    n, m = map(int, (input().split()))
+
+    group_a = [input() for _ in range(n)]
+    group_b = [input() for _ in range(m)]
+
+    for output in find_words(group_a, group_b):
+        print(*output)
+
+    # m, n = int[input() for _ in range(N)]:
+    #     print(m, n)
+    # commands = [input() for _ in range(N)]
+    # for output in find_words(commands):
+    #     print(output)
