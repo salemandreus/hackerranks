@@ -1,15 +1,15 @@
 from collections import defaultdict
 
 
-def find_words(n, m):
+def find_words(group_a, group_b):
 
     d = defaultdict(list)
 
-    for i in range(len(n)):
-        d[n[i]].append(i + 1)
+    for i in range(len(group_a)):
+        d[group_a[i]].append(i + 1)
 
 
-    for word in m:
+    for word in group_b:
         yield d.get(word, [-1])
 
 
