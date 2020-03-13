@@ -5,8 +5,8 @@ def find_words(group_a, group_b):
 
     d = defaultdict(list)
 
-    for i in range(len(group_a)):
-        d[group_a[i]].append(i + 1)
+    for i, word in enumerate(group_a, start=1):
+        d[word].append(i)
 
 
     for word in group_b:
