@@ -8,7 +8,6 @@ def find_words(group_a, group_b):
     for i, word in enumerate(group_a, start=1):
         d[word].append(i)
 
-
     for word in group_b:
         yield d.get(word, [-1])
 
@@ -19,6 +18,7 @@ def test_empty_list():
     group_b = []
 
     assert list(find_words(group_a, group_b)) == []
+
 
 def test_contains_all_one_group():
     """return all if all in one group"""
@@ -47,7 +47,6 @@ def test_group_b_element_not_found():
     group_b = ['a', 'b', 'c']
 
     assert list(find_words(group_a, group_b)) == [[1, 2, 4], [3, 5], [-1]]
-
 
 
 def test_single_group():
