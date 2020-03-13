@@ -1,34 +1,50 @@
 from collections import defaultdict
 
 
-def find_words(group_a, group_b):
+def find_words(n, m):
 
-    dict = defaultdict(list)
+    d = defaultdict(list)
 
-    
-    for i in range(len(group_a)):
-        if group_a[i] == 'a':
-            dict[arr1[i]] = i
-        elif group_a[i] == 'b':
-            b[arr1[i]] = i
-    return a
+    for i in range(len(n)):
+        for word in m:
+            if n[i] == word:
+                d[word].append(i + 1)
+
+    return list(d.values())
+
+def test_empty_list():
+    """ returns empty list """
+    group_a = []
+    group_b = []
+
+    assert find_words(group_a, group_b) == []
+
+def test_contains_all_one_group():
+    """return all if all in one group"""
+    group_a = ['a', 'a', 'a', 'a', 'a']
+    group_b = ['a']
+
+    assert find_words(group_a, group_b) == [[1, 2, 3, 4, 5]]
 
 
+def test_single_group():
+    """returns all when one group specified"""
+    group_a = ['a', 'a', 'b', 'a', 'b']
+    group_b = ['a']
+
+    assert find_words(group_a, group_b) == [[1, 2, 4]]
 
 
 def test():
     group_a = ['a', 'a', 'b', 'a', 'b']
     group_b = ['a', 'b']
 
-    assert find_words(group_a, group_b) == [1, 2, 4], [3, 5]
+    assert find_words(group_a, group_b) == [[1, 2, 4], [3, 5]]
 
-    #
-    # for i in range(m+n):
-    #     if n < i < m:
-    #         if n < i < m:
 
-def test_fail():
-    assert False
+def test_group_b_element_not_found():
+    group_a = ['a', 'a', 'b', 'a', 'b']
+    group_b = ['a', 'b', 'c']
 
-def test_null():
-    assert False
+    assert find_words(group_a, group_b) == [[1, 2, 4], [3, 5], [-1]]
+
