@@ -1,24 +1,26 @@
 from collections import defaultdict
 
 
-def find_words(arr1, arr2):
+def find_words(group_a, group_b):
 
-    a = defaultdict(int)
-    b = defaultdict(int)
+    dict = defaultdict(list)
 
-    for i in range(len(arr1)):
-        if i == 'a':
-            a[arr1[i]] = i
-        elif i == 'b':
+    
+    for i in range(len(group_a)):
+        if group_a[i] == 'a':
+            dict[arr1[i]] = i
+        elif group_a[i] == 'b':
             b[arr1[i]] = i
     return a
 
 
-def test():
-    arr1 = ['a', 'a', 'b', 'a', 'b']
-    arr2 = ['a', 'b']
 
-    assert find_words(arr1, arr2) == [1, 2, 4], [3, 5]
+
+def test():
+    group_a = ['a', 'a', 'b', 'a', 'b']
+    group_b = ['a', 'b']
+
+    assert find_words(group_a, group_b) == [1, 2, 4], [3, 5]
 
     #
     # for i in range(m+n):
