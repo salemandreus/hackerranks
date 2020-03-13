@@ -65,9 +65,3 @@ if __name__ == '__main__':
 
     for output in find_words(group_a, group_b):
         print(*output)
-
-    # m, n = int[input() for _ in range(N)]:
-    #     print(m, n)
-    # commands = [input() for _ in range(N)]
-    # for output in find_words(commands):
-    #     print(output)
