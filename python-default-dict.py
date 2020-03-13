@@ -10,9 +10,8 @@ def find_words(n, m):
 
 
     for word in m:
-        yield d[word]
+        yield d.get(word, [-1])
 
-    # return list(d.values())
 
 def test_empty_list():
     """ returns empty list """
