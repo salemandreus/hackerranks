@@ -5,6 +5,7 @@ Student = namedtuple('Student', 'ID, MARKS, NAME, CLASS' )
 
 
 def parse_input(lines):
+    """ WIP """
 
     Student = namedtuple('Student', lines[0])
 
@@ -14,6 +15,7 @@ def parse_input(lines):
 
 
 def get_average(*args):
+    """ WIP"""
     pass
 
 
@@ -76,5 +78,4 @@ def test_average():
 
 
     assert get_average("a","b","c") == ("a","b","c")
-
 
